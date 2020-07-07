@@ -5,7 +5,13 @@
 #----------------------------------------
 pip install --user ckanapi
 
-PATH=/home/users/$(whoami)/.local/bin:$PATH
+
+#----------------------------------------
+#     Add ckanapi to PATH
+#----------------------------------------
+cat << EOF_CFGFILE >> $CFGFILE
+export PATH=/home/users/\$(whoami)/.local/bin:\$PATH
+EOF_CFGFILE
 
 wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64
 

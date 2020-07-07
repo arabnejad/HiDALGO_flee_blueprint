@@ -43,6 +43,10 @@ source $CFGFILE
 #----------------------------------------
 #    Cloning HiDALGO flee blueprint repo
 #----------------------------------------
-git clone https://github.com/arabnejad/HiDALGO_flee_blueprint.git $PWD
+git clone https://github.com/arabnejad/HiDALGO_flee_blueprint.git
+
+mv HiDALGO_flee_blueprint/scripts .
+rm -rf HiDALGO_flee_blueprint
+
 
 
