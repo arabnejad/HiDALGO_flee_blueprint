@@ -1,0 +1,131 @@
+inputs:
+  #-----------------------------------------------------
+  #                 HPC Infrastructure
+  #-----------------------------------------------------  
+    hpc_base_dir:
+      description: HPC working directory
+      default: $HOME
+
+    hpc_interface_config:
+      description: timezone and HPC interface
+      default:
+        country_tz: Europe/Madrid
+        infrastructure_interface: SLURM
+    hpc_interface_credentials:
+      description: HPC credentials
+      default: {}
+    partition_name:
+      default: interactive
+
+    job_prefix:
+      default: FLEE_
+
+    workdir_prefix:
+      default: FLEE_cfy
+
+    monitor_entrypoint:
+      default: ""
+
+  #-----------------------------------------------------
+  #             FLEE SIMULATION PARAMETERS
+  #-----------------------------------------------------  
+  
+    flee_github_repo:
+      default:
+        INPUT:
+            name: FLEE Pilot URL
+            description: "FLEE github repo URL"
+            default: "https://github.com/djgroen/flee.git"
+            type: string
+            order: 1
+
+    branch:
+      default:
+        INPUT:
+            name: GitHub Branch Name
+            description: "GitHub Branch Name"
+            default: "master"
+            type: string
+            order: 2
+
+    config_name:
+      default:
+        INPUT:
+            name: Config location name
+            description: "Config location name to be used for simulation"
+            default: "mali"
+            type: string
+            order: 3
+
+    simulation_period:
+      default:
+        INPUT:
+            name: Days Simulation Period
+            description: "Days Simulation Period"
+            default: "50"
+            type: string
+            order: 4
+
+    parallel_mode:
+      default:
+        INPUT:
+            name: Enable/Disable Parallel Mode 
+            description: "Enable/Disable Parallel Mode"
+            default: "TRUE"
+            type: string
+            order: 5
+            
+    jobmanager_type:
+      default:
+        INPUT:
+            name: jobmanager
+            description: "jobmanager"
+            default: "SLURM"
+            type: string
+            order: 6
+
+    nnodes:
+      default:
+        INPUT:
+            name: Number of Nodes
+            description: "Number of Nodes"
+            default: "1"
+            type: tstring
+            order: 7
+            
+    ncorespernode:
+      default:
+        INPUT:
+            name: Number of cores/node
+            description: "Number of cores/node"
+            default: "28"
+            type: string
+            order: 8
+
+    ckanrepo:
+      default:
+        INPUT:
+            name: CKAN data repository
+            description: "CKAN data repository"
+            default: "https://hidalgo1.man.poznan.pl"
+            type: string
+            order: 9
+
+
+    ckanapikey:
+      default:
+        INPUT:
+            name: CKAN API Key
+            description: "CKAN API Key"
+            default: ""
+            type: string
+            order: 10
+
+    inputconfigtags:
+      default:
+        INPUT:
+            name: Tags name for input config file
+            description: "Tags name for input config file"
+            default: "inputs,flee,config_files"
+            type: string
+            order: 11
