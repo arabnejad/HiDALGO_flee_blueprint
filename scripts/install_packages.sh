@@ -1,5 +1,8 @@
 #!/bin/bash -l
 
+CFGFILE="flee.cfg"
+source $CFGFILE
+
 #----------------------------------------
 #        install required packages
 #----------------------------------------
