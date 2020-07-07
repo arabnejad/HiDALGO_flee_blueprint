@@ -1,0 +1,64 @@
+########
+# Copyright (c) 2019 Atos Spain SA. All rights reserved.
+# Modified by Hamid Arabnejad, Alireza Jahani, UK
+# 
+# This file is part of Croupier. It is written for FLEE hidalgo pilot
+#
+# Croupier is free software: you can redistribute it and/or modify it
+# under the terms of the Apache License, Version 2.0 (the License) License.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT ANY WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT, IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
+# OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+# See README file for full disclaimer information and LICENSE file for full
+# license information in the project root.
+#
+# @author: Hamid Arabnejad, Alireza Jahani
+#
+# user-blueprint-inputs.yaml
+
+#-----------------------------------------------------
+#                 HPC Infrastructure
+#-----------------------------------------------------
+hpc_base_dir: $HOME
+hpc_interface_config:
+  country_tz: Europe/Madrid
+  infrastructure_interface: SLURM
+
+#-----------------------------------------------------
+#                 EAGLE ACCOUNT
+#-----------------------------------------------------
+hpc_interface_credentials:
+  host: eagle.man.poznan.pl
+  user: <user name>
+  password: <password>
+
+# for pflee, we can use interactive partition to overcome been in queue time period
+# however, in case of using flee, we may need to use standard partition
+partition_name: interactive
+jobmanager_list: "SLURM"
+
+#-----------------------------------------------------
+#                     CKAN inputs
+#-----------------------------------------------------
+ckanrepo: "https://hidalgo1.man.poznan.pl"
+ckanapikey: "<private key>"
+
+#-----------------------------------------------------
+#         FLEE SIMULATION INPUT PARAMETERS
+#-----------------------------------------------------
+flee_github_repo: "https://github.com/djgroen/flee.git"
+branch: "master"
+
+config_name: "mali"
+simulation_period: "50"
+parallel_mode: "true"
+jobmanager_type: "SLURM"
+nnodes: "1"
+ncorespernode: "28"
+inputconfigtags: "inputs,flee,config_files"
