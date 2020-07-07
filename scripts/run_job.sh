@@ -71,7 +71,7 @@ source flee.cfg
 env > env.log
 /usr/bin/env > env2.log
 
-zip -r result_file_name *.err *.out *.script *.yaml $CONFIG_NAME
+zip -r $result_file_name *.err *.out *.script *.yaml $CONFIG_NAME
 
 
 
