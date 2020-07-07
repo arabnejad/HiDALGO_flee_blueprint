@@ -60,7 +60,7 @@ cd ..
 #     Zip output results 
 #----------------------------------------
 
-result_file_name=$CONFIG_NAME'-results['$ID'][by '$(whoami)']'
+result_file_name=$CONFIG_NAME'-results-'$ID'-'$(whoami)
 
 cat << EOF_CFGFILE >> $CFGFILE
 RESULT_FILE_NAME=$result_file_name
@@ -71,7 +71,7 @@ source flee.cfg
 env > env.log
 /usr/bin/env > env2.log
 
-zip -r $result_file_name *.err *.out *.script *.yaml $CONFIG_NAME
+zip -r result_file_name *.err *.out *.script *.yaml $CONFIG_NAME
 
 
 
