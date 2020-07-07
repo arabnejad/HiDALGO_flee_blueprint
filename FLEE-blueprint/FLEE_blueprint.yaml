@@ -32,7 +32,7 @@ imports:
     - http://raw.githubusercontent.com/ari-apc-lab/croupier/master/resources/types/cfy_types.yaml
     # HPC pluging
     - http://raw.githubusercontent.com/ari-apc-lab/croupier/master/plugin.yaml
-    - https://raw.githubusercontent.com/arabnejad/HiDALGO_flee_blueprint/master/blueprints/flee_blueprint_inputs_definition.yaml
+    - https://raw.githubusercontent.com/arabnejad/HiDALGO_flee_blueprint/master/FLEE-blueprint/flee_blueprint_inputs_definition.yaml
 
 node_templates:
     hpc_interface:
