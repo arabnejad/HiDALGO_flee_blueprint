@@ -63,7 +63,7 @@ node_templates:
                 partition: { get_input: partition_name }
                 max_time: "02:00:00"
             deployment:
-                bootstrap: 'scripts/pre_configuring.sh'
+                bootstrap: 'pre_configuring.sh'
                 inputs:
                     - { get_input: flee_github_repo }
                     - { get_input: branch }

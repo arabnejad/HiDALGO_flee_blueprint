@@ -1,11 +1,46 @@
 #!/bin/bash -l
 
-
 #----------------------------------------
 #        load ENV variables
 #----------------------------------------
 CFGFILE="flee.cfg"
 source $CFGFILE
+
+#----------------------------------------
+#     Cloning FLEE application
+#----------------------------------------
+git clone -b $REPO_BRANCH $FLEE_GITHUB_REPO
+
+
+#----------------------------------------
+#    Cloning HiDALGO flee blueprint repo
+#----------------------------------------
+git clone https://github.com/arabnejad/HiDALGO_flee_blueprint.git .
+
+
+
+#----------------------------------------
+#     install required packages
+#----------------------------------------
+bash scripts/install_packages.sh
+
+
+#----------------------------------------
+#     Download config files from CKAN
+#----------------------------------------
+bash scripts/ckan_downloader.sh
+
+
+
+#----------------------------------------
+#     Add FLEE to PYTHONPATH
+#----------------------------------------
+cat << EOF_CFGFILE >> $CFGFILE
+export PYTHONPATH=$PWD/flee:\$PYTHONPATH
+EOF_CFGFILE
+
+source $CFGFILE
+
 
 #----------------------------------------
 #     RUN job
