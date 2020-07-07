@@ -15,7 +15,7 @@ git clone -b $REPO_BRANCH $FLEE_GITHUB_REPO
 #----------------------------------------
 #    Cloning HiDALGO flee blueprint repo
 #----------------------------------------
-git clone https://github.com/arabnejad/HiDALGO_flee_blueprint.git .
+#git clone https://github.com/arabnejad/HiDALGO_flee_blueprint.git .
 
 
 
