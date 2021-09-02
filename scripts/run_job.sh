@@ -32,10 +32,15 @@ bash scripts/ckan_downloader.sh
 #----------------------------------------
 cat << EOF_CFGFILE >> $CFGFILE
 export PYTHONPATH=$PWD/flee:\$PYTHONPATH
-pip install --user -r $PWD/flee/requirements.txt
 EOF_CFGFILE
 
 source $CFGFILE
+
+
+#----------------------------------------------
+#     Install python required packages by FLEE
+#----------------------------------------------
+pip install --user -r $PWD/flee/requirements.txt
 
 
 #----------------------------------------
