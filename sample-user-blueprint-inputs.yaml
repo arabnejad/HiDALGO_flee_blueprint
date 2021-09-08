@@ -40,8 +40,15 @@ hpc_interface_credentials:
 
 # for pflee, we can use interactive partition to overcome been in queue time period
 # however, in case of using flee, we may need to use standard partition
+# sinfo --Format=partition
+# altair, interactive, standard, ...
 partition_name: interactive
 jobmanager_list: "SLURM"
+jobmanager_type: "SLURM"
+nnodes: "1"
+ncorespernode: "28"
+jobwalltime: "00:59:00"
+
 
 #-----------------------------------------------------
 #                     CKAN inputs
@@ -58,7 +65,4 @@ branch: "master"
 config_name: "mali"
 simulation_period: "50"
 parallel_mode: "true"
-jobmanager_type: "SLURM"
-nnodes: "1"
-ncorespernode: "28"
 inputconfigtags: "inputs,flee,config_files"
