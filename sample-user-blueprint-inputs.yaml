@@ -53,7 +53,7 @@ jobwalltime: "00:59:00"
 #-----------------------------------------------------
 #                     CKAN inputs
 #-----------------------------------------------------
-ckanrepo: "https://hidalgo1.man.poznan.pl"
+ckanrepo: "https://ckan.hidalgo-project.eu"
 ckanapikey: "<private key>"
 
 #-----------------------------------------------------

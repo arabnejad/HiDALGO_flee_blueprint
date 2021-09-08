@@ -110,7 +110,7 @@ inputs:
         INPUT:
             name: CKAN data repository
             description: "CKAN data repository"
-            default: "https://hidalgo1.man.poznan.pl"
+            default: "https://ckan.hidalgo-project.eu"
             type: string
             order: 9
 
