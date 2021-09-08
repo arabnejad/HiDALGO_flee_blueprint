@@ -6,7 +6,9 @@ source $CFGFILE
 #----------------------------------------
 #        install required packages
 #----------------------------------------
+echo "Install ckanapi python package"
 pip install --user ckanapi
+echo "DONE..."
 
 
 #----------------------------------------
