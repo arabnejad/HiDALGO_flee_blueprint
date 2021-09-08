@@ -40,7 +40,7 @@ source $CFGFILE
 #----------------------------------------------
 #     Install python required packages by FLEE
 #----------------------------------------------
-pip install --user -r $PWD/flee/requirements.txt
+pip3 install --user -r $PWD/flee/requirements.txt
 
 
 #----------------------------------------
