@@ -63,9 +63,9 @@ if [[ "${MSCALE^^}" == "FALSE" ]]; then
 
 else
 
-    if [[ "${COUPLING_TYPE^^}" == "FILE" ]]; then
+    if [[ "${MSCALE_COUPLING_TYPE^^}" == "FILE" ]]; then
         echo "Run multi-scale simulation . . ." | tee -a "$LOG_RUN_JOB"
-        ./run_file_coupling.sh --NUM_WORKERS NUM_WORKERS --cores CORES_PER_WORKER --INPUT_DATA_DIR MSCALE_INPUT_DATA_DIR --LOG_EXCHANGE_DATA LOG_EXCHANGE_DATA --WEATHER_COUPLING WEATHER_COUPLING
+        bash run_file_coupling.sh --NUM_WORKERS MSCALE_NUM_WORKERS --cores MSCALE_CORES_PER_WORKER --INPUT_DATA_DIR MSCALE_INPUT_DATA_DIR --LOG_EXCHANGE_DATA MSCALE_LOG_EXCHANGE_DATA --WEATHER_COUPLING MSCALE_WEATHER_COUPLING
     fi
 
 fi
