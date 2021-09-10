@@ -78,12 +78,12 @@ node_templates:
                     - { get_input: ckanapikey }
                     - { get_input: inputconfigtags}
                     - { get_input: mscale}
-                    - { get_input: num_workers}
-                    - { get_input: cores_per_worker}
+                    - { get_input: mscale_num_workers}
+                    - { get_input: mscale_cores_per_worker}
                     - { get_input: mscale_input_data_dir}
-                    - { get_input: log_exchange_data}
-                    - { get_input: coupling_type}
-                    - { get_input: weather_coupling}
+                    - { get_input: mscale_log_exchange_data}
+                    - { get_input: mscale_coupling_type}
+                    - { get_input: mscale_weather_coupling}
 
                 #revert: 'scripts/ckan_uploader.sh'
             skip_cleanup: True

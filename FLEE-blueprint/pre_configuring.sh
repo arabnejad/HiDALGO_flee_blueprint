@@ -18,12 +18,12 @@ ckanrepo = $9
 ckanapikey = ${10}
 inputconfigtags = ${11}
 mscale = ${12}
-num_workers = ${13}
-cores_per_worker = ${14}
+mscale_num_workers = ${13}
+mscale_cores_per_worker = ${14}
 mscale_input_data_dir = ${15}
-log_exchange_data = ${16}
-coupling_type = ${17}
-weather_coupling = ${18}
+mscale_log_exchange_data = ${16}
+mscale_coupling_type = ${17}
+mscale_weather_coupling = ${18}
 EOF_LOGFILE
 
 
@@ -42,12 +42,12 @@ CKANREPO=$9
 CKANAPIKEY=${10}
 INPUT_CONFIG_TAGS=${11}
 MSCALE=${11}
-NUM_WORKERS=${13}
-CORES_PER_WORKER=${14}
+MSCALE_NUM_WORKERS=${13}
+MSCALE_CORES_PER_WORKER=${14}
 MSCALE_INPUT_DATA_DIR=${15}
-LOG_EXCHANGE_DATA=${16}
-COUPLING_TYPE=${17}
-WEATHER_COUPLING=${18}
+MSCALE_LOG_EXCHANGE_DATA=${16}
+MSCALE_COUPLING_TYPE=${17}
+MSCALE_WEATHER_COUPLING=${18}
 ID=$id
 CURDIR=$PWD
 EOF_CFGFILE

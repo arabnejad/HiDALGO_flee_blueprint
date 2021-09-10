@@ -142,7 +142,7 @@ inputs:
             type: string
             order: 12
 
-    num_workers:
+    mscale_num_workers:
       default:
         INPUT:
             name: Number of workers for multi-scale simulation
@@ -151,7 +151,7 @@ inputs:
             type: tstring
             order: 13
 
-    cores_per_worker:
+    mscale_cores_per_worker:
       default:
         INPUT:
             name: Number of cores per each worker for multi-scale simulation
@@ -169,7 +169,7 @@ inputs:
             type: string
             order: 15
 
-    log_exchange_data:
+    mscale_log_exchange_data:
       default:
         INPUT:
             name: Enable/Disable logging exchanged data for multi-scale simulation
@@ -178,7 +178,7 @@ inputs:
             type: string
             order: 16
 
-    coupling_type:
+    mscale_coupling_type:
       default:
         INPUT:
             name: Set the couloing method for multi-scale simulation
@@ -187,7 +187,7 @@ inputs:
             type: string
             order: 17
 
-    weather_coupling:
+    mscale_weather_coupling:
       default:
         INPUT:
             name: Enable/Disable weather couping for multi-scale simulation
