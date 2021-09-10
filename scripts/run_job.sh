@@ -51,12 +51,23 @@ echo "PYTHONPATH = " $PYTHONPATH > $LOG_RUN_JOB
 
 cd $CONFIG_NAME
 
-if [[ "${PARALLEL_MODE^^}" == "TRUE" ]]; then
-    echo "PARALLEL_MODE is enabled . . ." | tee -a "$LOG_RUN_JOB"    
-    mpirun -n 28 python3 run_par.py input_csv source_data $SIMULATION_PERIOD simsetting.csv > out.csv
+if [[ "${MSCALE^^}" == "FALSE" ]]; then
+
+    if [[ "${PARALLEL_MODE^^}" == "TRUE" ]]; then
+        echo "PARALLEL_MODE is enabled . . ." | tee -a "$LOG_RUN_JOB"
+        mpirun -n 28 python3 run_par.py input_csv source_data $SIMULATION_PERIOD simsetting.csv > out.csv
+    else
+        echo "PARALLEL_MODE is disabled . . ." | tee -a "$LOG_RUN_JOB"
+        python3 run.py input_csv source_data $SIMULATION_PERIOD simsetting.csv > out.csv
+    fi
+
 else
-    echo "PARALLEL_MODE is disabled . . ." | tee -a "$LOG_RUN_JOB"
-    python3 run.py input_csv source_data $SIMULATION_PERIOD simsetting.csv > out.csv
+
+    if [[ "${COUPLING_TYPE^^}" == "FILE" ]]; then
+        echo "Run multi-scale simulation . . ." | tee -a "$LOG_RUN_JOB"
+        ./run_file_coupling.sh --NUM_WORKERS NUM_WORKERS --cores CORES_PER_WORKER --INPUT_DATA_DIR MSCALE_INPUT_DATA_DIR --LOG_EXCHANGE_DATA LOG_EXCHANGE_DATA --WEATHER_COUPLING WEATHER_COUPLING
+    fi
+
 fi
 
 cd ..
