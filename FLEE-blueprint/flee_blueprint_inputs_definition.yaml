@@ -132,3 +132,66 @@ inputs:
             default: "inputs,flee,config_files"
             type: string
             order: 11
+
+    mscale:
+      default:
+        INPUT:
+            name: Enable/Disable multi-scale simulation mode
+            description: "Enable/Disable multi-scale simulation mode"
+            default: "TRUE"
+            type: string
+            order: 12
+
+    num_workers:
+      default:
+        INPUT:
+            name: Number of workers for multi-scale simulation
+            description: "Number of workers for multi-scale simulation"
+            default: "1"
+            type: tstring
+            order: 13
+
+    cores_per_worker:
+      default:
+        INPUT:
+            name: Number of cores per each worker for multi-scale simulation
+            description: "Number of cores per each worker for multi-scale simulation"
+            default: "1"
+            type: tstring
+            order: 14
+
+    mscale_input_data_dir:
+      default:
+        INPUT:
+            name: Config location name for multi-scale simulation
+            description: "Config location name to be used for multi-scale simulation"
+            default: "ssudan-mscale-test"
+            type: string
+            order: 15
+
+    log_exchange_data:
+      default:
+        INPUT:
+            name: Enable/Disable logging exchanged data for multi-scale simulation
+            description: "Enable/Disable logging exchanged data for multi-scale simulation"
+            default: "TRUE"
+            type: string
+            order: 16
+
+    coupling_type:
+      default:
+        INPUT:
+            name: Set the couloing method for multi-scale simulation
+            description: "Set the couloing method for multi-scale simulation"
+            default: "file"
+            type: string
+            order: 17
+
+    weather_coupling:
+      default:
+        INPUT:
+            name: Enable/Disable weather couping for multi-scale simulation
+            description: "Enable/Disable weather couping for multi-scale simulation"
+            default: "FALSE"
+            type: string
+            order: 18

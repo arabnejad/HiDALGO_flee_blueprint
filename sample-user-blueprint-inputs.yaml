@@ -62,7 +62,19 @@ ckanapikey: "<private key>"
 flee_github_repo: "https://github.com/djgroen/flee.git"
 branch: "master"
 
-config_name: "mali"
+config_name: "mali" # possible inputs : [mali, car, burundi, ssudan, multiscale]
 simulation_period: "50"
 parallel_mode: "true"
 inputconfigtags: "inputs,flee,config_files"
+
+# to run a multi-scale simulation, please set mscale parameter = True
+# in case of running multi-scale simulation, please make sure you set 
+# config_name: "multiscale"
+mscale: "False"
+# variable settings for multi-scale simulation
+num_workers: "1"
+cores_per_worker: "4"
+mscale_input_data_dir: "ssudan-mscale-test" # possible inputs : [ssudan-mscale, ssudan-mscale-test]
+log_exchange_data: "True" # [True, False]
+coupling_type: "file" # [file, muscle3]
+weather_coupling: "False" # [True, False]
