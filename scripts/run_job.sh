@@ -88,7 +88,7 @@ cd ..
 #     Zip output results 
 #----------------------------------------
 
-result_file_name=$CONFIG_NAME'-results-'$(whoami)'-'$ID'-'$(date +'[%H:%M:%S][%m/%d/%Y]')
+result_file_name=$CONFIG_NAME'-results-'$(whoami)'-'$ID'-'$(date +'[%H:%M:%S][%m-%d-%Y]')
 
 cat << EOF_CFGFILE >> $CFGFILE
 RESULT_FILE_NAME=$result_file_name
