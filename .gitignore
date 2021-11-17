@@ -1,0 +1,9 @@
+
+*.tar.gz
+*.zip
+
+# ignore flee-inputs folders
+**/flee-inputs/*
+
+# User-defined blueprint file
+user-blueprint-inputs.yaml

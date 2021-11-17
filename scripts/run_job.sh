@@ -51,11 +51,21 @@ echo "PYTHONPATH = " $PYTHONPATH > $LOG_RUN_JOB
 
 cd $CONFIG_NAME
 
-if [[ "${MSCALE^^}" == "FALSE" ]]; then
+# covert to lowercase
+MSCALE=$(echo "$MSCALE" | tr "[:upper:]" "[:lower:]")
+PARALLEL_MODE=$(echo "$PARALLEL_MODE" | tr "[:upper:]" "[:lower:]")
+MSCALE_COUPLING_TYPE=$(echo "$MSCALE_COUPLING_TYPE" | tr "[:upper:]" "[:lower:]")
 
-    if [[ "${PARALLEL_MODE^^}" == "TRUE" ]]; then
+
+
+
+if [ "$MSCALE" == "false" ]
+then
+
+    if [ "$PARALLEL_MODE" == "true" ]
+    then
         echo "PARALLEL_MODE is enabled . . ." | tee -a "$LOG_RUN_JOB"
-        mpirun -n 28 python3 run_par.py input_csv source_data $SIMULATION_PERIOD simsetting.csv > out.csv
+        mpirun -n $NUMBER_OF_CORES_PER_NODE python3 run_par.py input_csv source_data $SIMULATION_PERIOD simsetting.csv > out.csv
     else
         echo "PARALLEL_MODE is disabled . . ." | tee -a "$LOG_RUN_JOB"
         python3 run.py input_csv source_data $SIMULATION_PERIOD simsetting.csv > out.csv
@@ -63,9 +73,10 @@ if [[ "${MSCALE^^}" == "FALSE" ]]; then
 
 else
     pip3 install --user -U muscle3
-    if [[ "${MSCALE_COUPLING_TYPE^^}" == "FILE" ]]; then
-        echo "Run multi-scale simulation . . ." | tee -a "$LOG_RUN_JOB"
-        bash run_file_coupling.sh --NUM_WORKERS $MSCALE_NUM_WORKERS --cores $MSCALE_CORES_PER_WORKER --INPUT_DATA_DIR $MSCALE_INPUT_DATA_DIR --LOG_EXCHANGE_DATA $MSCALE_LOG_EXCHANGE_DATA --WEATHER_COUPLING $MSCALE_WEATHER_COUPLING
+    if [ "$MSCALE_COUPLING_TYPE" == "file" ]
+    then
+        echo "Run file-mode multi-scale simulation . . ." | tee -a "$LOG_RUN_JOB"
+        bash run_file_coupling.sh --NUM_INSTANCES $MSCALE_NUM_INSTANCES --cores $MSCALE_CORES_PER_INSTANCE --INPUT_DATA_DIR $MSCALE_INPUT_DATA_DIR --LOG_EXCHANGE_DATA $MSCALE_LOG_EXCHANGE_DATA --WEATHER_COUPLING $MSCALE_WEATHER_COUPLING
     fi
 
 fi

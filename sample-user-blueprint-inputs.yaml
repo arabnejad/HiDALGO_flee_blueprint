@@ -72,8 +72,8 @@ inputconfigtags: "inputs,flee,config_files"
 # config_name: "multiscale"
 mscale: "False"
 # variable settings for multi-scale simulation
-mscale_num_workers: "1"
-mscale_cores_per_worker: "4"
+mscale_num_instances: "1"
+mscale_cores_per_instance: "4"
 mscale_input_data_dir: "ssudan-mscale-test" # possible inputs : [ssudan-mscale, ssudan-mscale-test]
 mscale_log_exchange_data: "True" # [True, False]
 mscale_coupling_type: "file" # [file, muscle3]

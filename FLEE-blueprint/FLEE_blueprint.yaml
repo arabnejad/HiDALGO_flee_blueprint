@@ -78,8 +78,8 @@ node_templates:
                     - { get_input: ckanapikey }
                     - { get_input: inputconfigtags}
                     - { get_input: mscale}
-                    - { get_input: mscale_num_workers}
-                    - { get_input: mscale_cores_per_worker}
+                    - { get_input: mscale_num_instances}
+                    - { get_input: mscale_cores_per_instance}
                     - { get_input: mscale_input_data_dir}
                     - { get_input: mscale_log_exchange_data}
                     - { get_input: mscale_coupling_type}

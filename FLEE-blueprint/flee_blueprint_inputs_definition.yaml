@@ -142,20 +142,20 @@ inputs:
             type: string
             order: 12
 
-    mscale_num_workers:
+    mscale_num_instances:
       default:
         INPUT:
-            name: Number of workers for multi-scale simulation
-            description: "Number of workers for multi-scale simulation"
+            name: Number of instances for multi-scale simulation
+            description: "Number of instances for multi-scale simulation"
             default: "1"
             type: tstring
             order: 13
 
-    mscale_cores_per_worker:
+    mscale_cores_per_instance:
       default:
         INPUT:
-            name: Number of cores per each worker for multi-scale simulation
-            description: "Number of cores per each worker for multi-scale simulation"
+            name: Number of cores per each instance for multi-scale simulation
+            description: "Number of cores per each instance for multi-scale simulation"
             default: "1"
             type: tstring
             order: 14
