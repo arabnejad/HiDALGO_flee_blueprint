@@ -8,190 +8,121 @@ inputs:
 
     hpc_interface_config:
       description: timezone and HPC interface
+      type: croupier.datatypes.wm_config
       default:
-        country_tz: Europe/Madrid
+        country_tz: UTC
         infrastructure_interface: SLURM
+
     hpc_interface_credentials:
       description: HPC credentials
-      default: {}
+      required: True
+      type: croupier.datatypes.ssh_config
+
     partition_name:
       default: interactive
+      type: string
       
     jobwalltime:
       default: "00:59:00"
+      type: string
 
     job_prefix:
       default: FLEE_
+      type: string
 
     workdir_prefix:
       default: FLEE_cfy
+      type: string
 
     monitor_entrypoint:
       default: ""
+      type: string
 
   #-----------------------------------------------------
   #             FLEE SIMULATION PARAMETERS
   #-----------------------------------------------------  
   
     flee_github_repo:
-      default:
-        INPUT:
-            name: FLEE Pilot URL
-            description: "FLEE github repo URL"
-            default: "https://github.com/djgroen/flee.git"
-            type: string
-            order: 1
-
+      description: "FLEE github repo URL"
+      default: "https://github.com/djgroen/flee.git"
+      type: string
+            
     branch:
-      default:
-        INPUT:
-            name: GitHub Branch Name
-            description: "GitHub Branch Name"
-            default: "master"
-            type: string
-            order: 2
+      description: "GitHub Branch Name"
+      default: master
+      type: string
 
     config_name:
-      default:
-        INPUT:
-            name: Config location name
-            description: "Config location name to be used for simulation"
-            default: "mali"
-            type: string
-            order: 3
-
-    simulation_period:
-      default:
-        INPUT:
-            name: Days Simulation Period
-            description: "Days Simulation Period"
-            default: "50"
-            type: string
-            order: 4
-
-    parallel_mode:
-      default:
-        INPUT:
-            name: Enable/Disable Parallel Mode 
-            description: "Enable/Disable Parallel Mode"
-            default: "TRUE"
-            type: string
-            order: 5
+      description: "Config location name to be used for simulation"
+      default: mali
+      type: string
             
-    jobmanager_type:
-      default:
-        INPUT:
-            name: jobmanager
-            description: "jobmanager"
-            default: "SLURM"
-            type: string
-            order: 6
-
+    simulation_period:
+      description: "Days Simulation Period"
+      default: "50"
+      type: string
+           
+    parallel_mode:
+      description: "Enable/Disable Parallel Mode"
+      default: "TRUE"
+      type: string
+            
     nnodes:
-      default:
-        INPUT:
-            name: Number of Nodes
-            description: "Number of Nodes"
-            default: "1"
-            type: tstring
-            order: 7
+      description: "Number of Nodes"
+      default: "1"
+      type: string
             
     ncorespernode:
-      default:
-        INPUT:
-            name: Number of cores/node
-            description: "Number of cores/node"
-            default: "28"
-            type: string
-            order: 8
+      description: "Number of cores/node"
+      default: "28"
+      type: string
 
     ckanrepo:
-      default:
-        INPUT:
-            name: CKAN data repository
-            description: "CKAN data repository"
-            default: "https://ckan.hidalgo-project.eu"
-            type: string
-            order: 9
-
+      description: "CKAN data repository"
+      default: "https://ckan.hidalgo-project.eu"
+      type: string
 
     ckanapikey:
-      default:
-        INPUT:
-            name: CKAN API Key
-            description: "CKAN API Key"
-            default: ""
-            type: string
-            order: 10
-
+      description: "CKAN API Key"
+      required: True 
+      type: string
+         
     inputconfigtags:
-      default:
-        INPUT:
-            name: Tags name for input config file
-            description: "Tags name for input config file"
-            default: "inputs,flee,config_files"
-            type: string
-            order: 11
+      description: "Tags name for input config file"
+      default: "inputs,flee,config_files"
+      type: string
 
     mscale:
-      default:
-        INPUT:
-            name: Enable/Disable multi-scale simulation mode
-            description: "Enable/Disable multi-scale simulation mode"
-            default: "TRUE"
-            type: string
-            order: 12
+      description: "Enable/Disable multi-scale simulation mode"
+      default: "TRUE"
+      type: string
 
     mscale_num_instances:
-      default:
-        INPUT:
-            name: Number of instances for multi-scale simulation
-            description: "Number of instances for multi-scale simulation"
-            default: "1"
-            type: tstring
-            order: 13
+      description: "Number of instances for multi-scale simulation"
+      default: "1"
+      type: string
 
     mscale_cores_per_instance:
-      default:
-        INPUT:
-            name: Number of cores per each instance for multi-scale simulation
-            description: "Number of cores per each instance for multi-scale simulation"
-            default: "1"
-            type: tstring
-            order: 14
+      description: "Number of cores per each instance for multi-scale simulation"
+      default: "1"
+      type: string
 
     mscale_input_data_dir:
-      default:
-        INPUT:
-            name: Config location name for multi-scale simulation
-            description: "Config location name to be used for multi-scale simulation"
-            default: "ssudan-mscale-test"
-            type: string
-            order: 15
+      description: "Config location name to be used for multi-scale simulation"
+      default: "ssudan-mscale-test"
+      type: string
 
     mscale_log_exchange_data:
-      default:
-        INPUT:
-            name: Enable/Disable logging exchanged data for multi-scale simulation
-            description: "Enable/Disable logging exchanged data for multi-scale simulation"
-            default: "TRUE"
-            type: string
-            order: 16
+      description: "Enable/Disable logging exchanged data for multi-scale simulation"
+      default: "TRUE"
+      type: string
 
     mscale_coupling_type:
-      default:
-        INPUT:
-            name: Set the couloing method for multi-scale simulation
-            description: "Set the couloing method for multi-scale simulation"
-            default: "file"
-            type: string
-            order: 17
+      description: "Set the couloing method for multi-scale simulation"
+      default: file
+      type: string
 
     mscale_weather_coupling:
-      default:
-        INPUT:
-            name: Enable/Disable weather couping for multi-scale simulation
-            description: "Enable/Disable weather couping for multi-scale simulation"
-            default: "FALSE"
-            type: string
-            order: 18
+      description:  "Enable/Disable weather couping for multi-scale simulation"
+      default: "FALSE"
+      type: string
